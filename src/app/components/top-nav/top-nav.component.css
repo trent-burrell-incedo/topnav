@@ -922,3 +922,7 @@
   height: calc(100% - 30px);
   height: 250px;
 }
+
+.active-menu {
+  color: #3670e3 !important;
+}

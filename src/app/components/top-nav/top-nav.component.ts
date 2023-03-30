@@ -51,6 +51,7 @@ export class TopNavComponent {
           }
         }
       }
+      this.initializeActiveMenu();
     });
   }
 
@@ -85,7 +86,7 @@ export class TopNavComponent {
   toggleSubmenu(menu) {
     if (menu?.childMenuItems?.length > 0) {
     } else {
-      this.openLink(menu);
+      this.openLink('', menu);
     }
   }
 
@@ -101,25 +102,49 @@ export class TopNavComponent {
     menu.showMenu = false;
   }
 
-  openLink(menu) {
-    this.toggleMenu();
-    this.initializeMenu();
-    console.log('menu', menu);
-    // if (menu.menuAction.name === 'ROUTING') {
-    //   // this.router.navigate([menu.menuURL]);
-    //   this.topNavOutEvent.emit(menu.menuURL);
-    // } else {
-    //   // this.router.navigate([menu.menuURL]);
-    //   // window.open(menu.menuURL, '_blank');
-    //   window.open('google.com', '_blank');
-    // }
-    this.topNavOutEvent.emit('https://www.youtube.com/embed/3dHNOWTI7H8');
-    // window.open('google.com', '_blank');
+  openLink(childMenu, menu) {
+    if (childMenu) {
+      this.toggleMenu();
+      this.initializeMenu();
+      // if (menu.menuAction.name === 'ROUTING') {
+      //   // this.router.navigate([menu.menuURL]);
+      //   this.topNavOutEvent.emit(menu.menuURL);
+      // } else {
+      //   // this.router.navigate([menu.menuURL]);
+      //   // window.open(menu.menuURL, '_blank');
+      //   window.open('google.com', '_blank');
+      // }
+      this.topNavOutEvent.emit('https://www.youtube.com/embed/3dHNOWTI7H8');
+      // window.open('google.com', '_blank');
+    } else {
+      this.toggleMenu();
+      this.initializeMenu();
+      // if (menu.menuAction.name === 'ROUTING') {
+      //   // this.router.navigate([menu.menuURL]);
+      //   this.topNavOutEvent.emit(menu.menuURL);
+      // } else {
+      //   // this.router.navigate([menu.menuURL]);
+      //   // window.open(menu.menuURL, '_blank');
+      //   window.open('google.com', '_blank');
+      // }
+      this.topNavOutEvent.emit('https://www.youtube.com/embed/3dHNOWTI7H8');
+    }
+
+    if (!menu?.activeMenu) {
+      this.initializeActiveMenu();
+    }
+    menu.activeMenu = true;
   }
 
   initializeMenu() {
     for (let list of this.menuList) {
       list['showMenu'] = false;
+    }
+  }
+
+  initializeActiveMenu() {
+    for (let list of this.menuList) {
+      list['activeMenu'] = false;
     }
   }
 

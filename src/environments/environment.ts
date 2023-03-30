@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://mfe-top-nav-clb-175761738.us-east-1.elb.amazonaws.com/LPLMenuAPI/',
+  apiUrl: 'http://localhost:8080/LPLJsonAPI/',
+  // apiUrl: 'http://mfe-top-nav-clb-175761738.us-east-1.elb.amazonaws.com/LPLMenuAPI/',
   token: '',
 };
 

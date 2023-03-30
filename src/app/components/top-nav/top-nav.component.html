@@ -66,12 +66,13 @@
                     <ul class="nav-menu pl-0 sm:pl-[20px]">
                         <li class="container sm:w-auto" *ngFor="let menu of menuList">
                             <a class="px-0 py-[9px] sm:px-[21px] sm:py-[28.5px] w-full flex justify-between cursor-pointer group"
-                                (click)="toggleSubmenu(menu)" (mouseenter)="showMenu(menu)">
+                                [ngClass]="menu?.activeMenu?'active-menu':''" (click)="toggleSubmenu(menu)"
+                                (mouseenter)="showMenu(menu)">
                                 {{menu.menuItemName}}
                                 <div class="w-[20px] pl-[5px]"
                                     *ngIf="menu?.childMenuItems?.length > 0 && !menu?.showMenu">
-                                    <svg width="20" height="20" viewBox="0 0 20 20"
-                                        class="fill-menuColor group-hover:fill-menuHover" fill="none"
+                                    <svg width="20" height="20" viewBox="0 0 20 20" class="fill-menuColor"
+                                        [ngClass]="menu?.showMenu || menu?.activeMenu?'fill-menuHover':''" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M9.66796 14.0859C9.85156 14.2695 10.1484 14.2695 10.332 14.0859L16.1133 8.35159C16.2969 8.16799 16.2969 7.87113 16.1133 7.68753L15.3398 6.9141C15.1562 6.7305 14.8594 6.7305 14.6758 6.9141L9.99999 11.543L5.32421 6.9141C5.14061 6.7305 4.84375 6.7305 4.66015 6.9141L3.88672 7.68753C3.70312 7.87113 3.70312 8.16799 3.88672 8.35159L9.66796 14.0859Z" />
@@ -81,8 +82,8 @@
                                 </div>
                                 <div class="w-[20px] pl-[5px] transform -scale-y-100"
                                     *ngIf="menu?.childMenuItems?.length > 0 && menu?.showMenu">
-                                    <svg width="20" height="20" viewBox="0 0 20 20"
-                                        class="fill-menuColor group-hover:fill-menuHover" fill="none"
+                                    <svg width="20" height="20" [ngClass]="menu?.showMenu || menu?.activeMenu?'fill-menuHover':''"
+                                        viewBox="0 0 20 20" class="fill-menuColor" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M9.66796 14.0859C9.85156 14.2695 10.1484 14.2695 10.332 14.0859L16.1133 8.35159C16.2969 8.16799 16.2969 7.87113 16.1133 7.68753L15.3398 6.9141C15.1562 6.7305 14.8594 6.7305 14.6758 6.9141L9.99999 11.543L5.32421 6.9141C5.14061 6.7305 4.84375 6.7305 4.66015 6.9141L3.88672 7.68753C3.70312 7.87113 3.70312 8.16799 3.88672 8.35159L9.66796 14.0859Z" />
@@ -97,7 +98,7 @@
                                 [ngClass]="menu?.showMenu ? 'block' : 'hidden'">
                                 <li class="container sm:w-auto" *ngFor="let childMenu of menu.childMenuItems">
                                     <a class="px-0 py-[9px] sm:px-[21px] sm:py-[28.5px] w-full flex justify-between cursor-pointer"
-                                        (click)="openLink(childMenu)">
+                                        (click)="openLink(childMenu, menu)">
                                         {{childMenu.menuItemName}}
                                     </a>
                                 </li>
