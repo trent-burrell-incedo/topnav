@@ -1,0 +1,202 @@
+{
+    "parentMenuItems": [
+        {
+            "menuItemID": 1,
+            "menuItemName": "SignIn Options",
+            "menuURL": null,
+            "menuElementClass": "sigin-in-option",
+            "menuElementID": "sigin-in-option",
+            "menuType": {
+                "name": "HEADER",
+                "description": "HEADER"
+            },
+            "menuAction": {
+                "name": "DROPDOWN",
+                "description": "DROPDOWN"
+            },
+            "menuLoadConfig": {
+                "name": null,
+                "description": null
+            },
+            "menuLayout": {
+                "name": "STANDARD",
+                "description": "STANDARD"
+            },
+            "menuEntitlementType": {
+                "name": "STATIC",
+                "description": null
+            },
+            "childMenuItems": [
+                {
+                    "menuItemID": 2,
+                    "menuItemName": "Login",
+                    "menuURL": "http://localhost:4201/usermanager?page=login",
+                    "menuElementClass": "login",
+                    "menuElementID": "login",
+                    "menuType": {
+                        "name": "LINK",
+                        "description": "LINK"
+                    },
+                    "menuAction": {
+                        "name": "ROUTING",
+                        "description": "ROUTING"
+                    },
+                    "menuLoadConfig": {
+                        "name": "LAZYLOAD",
+                        "description": "LAZYLOAD"
+                    },
+                    "menuLayout": {
+                        "name": null,
+                        "description": null
+                    },
+                    "menuEntitlementType": {
+                        "name": "STATIC",
+                        "description": null
+                    },
+                    "childMenuItems": []
+                },
+                {
+                    "menuItemID": 3,
+                    "menuItemName": "Registration",
+                    "menuURL": "http://localhost:4201/usermanager?page=registration",
+                    "menuElementClass": "registration",
+                    "menuElementID": "registration",
+                    "menuType": {
+                        "name": "LINK",
+                        "description": "LINK"
+                    },
+                    "menuAction": {
+                        "name": "ROUTING",
+                        "description": "ROUTING"
+                    },
+                    "menuLoadConfig": {
+                        "name": "LAZYLOAD",
+                        "description": "LAZYLOAD"
+                    },
+                    "menuLayout": {
+                        "name": null,
+                        "description": null
+                    },
+                    "menuEntitlementType": {
+                        "name": "STATIC",
+                        "description": null
+                    },
+                    "childMenuItems": []
+                },
+                {
+                    "menuItemID": 4,
+                    "menuItemName": "Forget Password",
+                    "menuURL": "http://localhost:4201/usermanager?page=forgetpassword",
+                    "menuElementClass": "forgetpassword",
+                    "menuElementID": "forgetpassword",
+                    "menuType": {
+                        "name": "LINK",
+                        "description": "LINK"
+                    },
+                    "menuAction": {
+                        "name": "ROUTING",
+                        "description": "ROUTING"
+                    },
+                    "menuLoadConfig": {
+                        "name": "LAZYLOAD",
+                        "description": "LAZYLOAD"
+                    },
+                    "menuLayout": {
+                        "name": null,
+                        "description": null
+                    },
+                    "menuEntitlementType": {
+                        "name": "STATIC",
+                        "description": null
+                    },
+                    "childMenuItems": []
+                }
+            ]
+        },
+        {
+            "menuItemID": 5,
+            "menuItemName": "Contact Us",
+            "menuURL": null,
+            "menuElementClass": "contact-us",
+            "menuElementID": "contact-us",
+            "menuType": {
+                "name": "HEADER",
+                "description": "HEADER"
+            },
+            "menuAction": {
+                "name": "DROPDOWN",
+                "description": "DROPDOWN"
+            },
+            "menuLoadConfig": {
+                "name": null,
+                "description": null
+            },
+            "menuLayout": {
+                "name": "STANDARD",
+                "description": "STANDARD"
+            },
+            "menuEntitlementType": {
+                "name": "STATIC",
+                "description": null
+            },
+            "childMenuItems": [
+                {
+                    "menuItemID": 6,
+                    "menuItemName": "About",
+                    "menuURL": "http://localhost:4202/contact?page=about",
+                    "menuElementClass": "about",
+                    "menuElementID": "about",
+                    "menuType": {
+                        "name": "LINK",
+                        "description": "LINK"
+                    },
+                    "menuAction": {
+                        "name": "ROUTING",
+                        "description": "ROUTING"
+                    },
+                    "menuLoadConfig": {
+                        "name": "LAZYLOAD",
+                        "description": "LAZYLOAD"
+                    },
+                    "menuLayout": {
+                        "name": null,
+                        "description": null
+                    },
+                    "menuEntitlementType": {
+                        "name": "STATIC",
+                        "description": null
+                    },
+                    "childMenuItems": []
+                },
+                {
+                    "menuItemID": 7,
+                    "menuItemName": "Version",
+                    "menuURL": "http://localhost:4202/contact?page=version",
+                    "menuElementClass": "about",
+                    "menuElementID": "about",
+                    "menuType": {
+                        "name": "LINK",
+                        "description": "LINK"
+                    },
+                    "menuAction": {
+                        "name": "ROUTING",
+                        "description": "ROUTING"
+                    },
+                    "menuLoadConfig": {
+                        "name": "LAZYLOAD",
+                        "description": "LAZYLOAD"
+                    },
+                    "menuLayout": {
+                        "name": null,
+                        "description": null
+                    },
+                    "menuEntitlementType": {
+                        "name": "STATIC",
+                        "description": null
+                    },
+                    "childMenuItems": []
+                }
+            ]
+        }
+    ]
+}

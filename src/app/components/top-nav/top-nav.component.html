@@ -1,0 +1,145 @@
+<div class="header_area bg-white shadow-lg">
+    <div class="main_header_area animated">
+        <div class="container flex justify-between items-center px-3 sm:hidden">
+            <div class="w-[2rem] flex justify-center items-center" *ngIf="!isOpenMenu" (click)="toggleMenu()">
+                <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1194_1511)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0 2C0 0.89 0.89 0 2 0H26C27.11 0 28 0.89 28 2C28 3.11 27.11 4 26 4H2C0.89 4 0 3.11 0 2Z"
+                            fill="#272727" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0 12C0 10.89 0.89 10 2 10H26C27.11 10 28 10.89 28 12C28 13.11 27.11 14 26 14H2C0.89 14 0 13.11 0 12Z"
+                            fill="#272727" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M28 22C28 23.11 27.11 24 26 24H2C0.89 24 0 23.11 0 22C0 20.89 0.89 20 2 20H26C27.11 20 28 20.89 28 22Z"
+                            fill="#272727" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1194_1511">
+                            <rect width="28" height="24" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            <div class="w-[2rem] flex justify-center items-center" *ngIf="isOpenMenu" (click)="toggleMenu()">
+                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.6859 14.9999C15.1328 15.553 14.2388 15.553 13.6857 14.9999L1.68579 2.99998C1.13267 2.44686 1.13304 1.55324 1.68616 1.00012C2.23928 0.446996 3.1329 0.446622 3.68602 0.999742L15.6859 12.9996C16.239 13.5528 16.239 14.4468 15.6859 14.9999Z"
+                        fill="#272727" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M1.68614 14.9999C2.23926 15.553 3.13326 15.553 3.68638 14.9999L15.6863 2.99998C16.2394 2.44686 16.239 1.55324 15.6859 1.00012C15.1328 0.446996 14.2392 0.446622 13.686 0.999742L1.68614 12.9996C1.13302 13.5528 1.13302 14.4468 1.68614 14.9999Z"
+                        fill="#272727" />
+                </svg>
+            </div>
+
+            <div class="nav-header flex auto">
+                <a class="nav-brand logo" href="#"><img src="../assets/images/Logo.svg" alt="Logo"></a>
+                <div class="nav-toggle"></div>
+            </div>
+            <div>
+                <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M19.423 16.5156C19.4817 16.5777 19.538 16.6374 19.5915 16.6952C19.8586 16.9839 19.9771 17.33 19.9749 17.6685C19.9705 18.4037 19.3969 19.1031 18.5455 19.1031H1.45437C0.602968 19.1031 0.029847 18.4037 0.0249329 17.6685C0.022715 17.33 0.141175 16.9843 0.408362 16.6952C0.461802 16.6374 0.518135 16.5777 0.576794 16.5156C1.46246 15.5782 2.87849 14.0795 2.87849 9.77809C2.87849 6.29465 5.30453 3.50611 8.57578 2.82199V1.88771C8.57578 1.09554 9.21348 0.453094 9.99991 0.453094C10.7863 0.453094 11.424 1.09554 11.424 1.88771V2.82199C14.6953 3.50611 17.1213 6.29465 17.1213 9.77809C17.1213 14.0795 18.5374 15.5782 19.423 16.5156ZM12.8486 20.5377C12.8486 22.1225 11.5728 23.4069 9.99991 23.4069C8.42706 23.4069 7.15126 22.1225 7.15126 20.5377H12.8486Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M19.423 16.5156C19.4817 16.5777 19.538 16.6374 19.5915 16.6952C19.8586 16.9839 19.9771 17.33 19.9749 17.6685C19.9705 18.4037 19.3969 19.1031 18.5455 19.1031H1.45437C0.602968 19.1031 0.029847 18.4037 0.0249329 17.6685C0.022715 17.33 0.141175 16.9843 0.408362 16.6952C0.461802 16.6374 0.518135 16.5777 0.576794 16.5156C1.46246 15.5782 2.87849 14.0795 2.87849 9.77809C2.87849 6.29465 5.30453 3.50611 8.57578 2.82199V1.88771C8.57578 1.09554 9.21348 0.453094 9.99991 0.453094C10.7863 0.453094 11.424 1.09554 11.424 1.88771V2.82199C14.6953 3.50611 17.1213 6.29465 17.1213 9.77809C17.1213 14.0795 18.5374 15.5782 19.423 16.5156ZM12.8486 20.5377C12.8486 22.1225 11.5728 23.4069 9.99991 23.4069C8.42706 23.4069 7.15126 22.1225 7.15126 20.5377H12.8486Z"
+                        fill="#272727" />
+                </svg>
+            </div>
+        </div>
+        <div class="container-fluid sm:block" [ngClass]="isOpenMenu ? '' : 'hidden'">
+            <nav id="navigation1" class="navigation">
+                <!-- Logo Area Start -->
+                <div class="nav-header hidden sm:block">
+                    <a class="nav-brand logo" href="#"><img src="../assets/images/Logo.svg" alt="Logo"></a>
+                    <div class="nav-toggle"></div>
+                </div>
+                <!-- Search panel Start -->
+                <div class="nav-search hidden sm:block">
+                    <div class="icon-wrap">
+                        <input type="text" class="search-control form-icon"
+                            placeholder="Search by Symbol or Company Name">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+                <div class="nav-menus-wrapper">
+                    <ul class="nav-menu pl-0 sm:pl-[20px]">
+                        <li class="container sm:w-auto" *ngFor="let menu of menuList">
+                            <a class="px-0 py-[9px] sm:px-[21px] sm:py-[28.5px] w-full flex justify-between cursor-pointer group"
+                                (click)="toggleSubmenu(menu)" (mouseenter)="showMenu(menu)">
+                                {{menu.menuItemName}}
+                                <div class="w-[20px] pl-[5px]"
+                                    *ngIf="menu?.childMenuItems?.length > 0 && !menu?.showMenu">
+                                    <svg width="20" height="20" viewBox="0 0 20 20"
+                                        class="fill-menuColor group-hover:fill-menuHover" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.66796 14.0859C9.85156 14.2695 10.1484 14.2695 10.332 14.0859L16.1133 8.35159C16.2969 8.16799 16.2969 7.87113 16.1133 7.68753L15.3398 6.9141C15.1562 6.7305 14.8594 6.7305 14.6758 6.9141L9.99999 11.543L5.32421 6.9141C5.14061 6.7305 4.84375 6.7305 4.66015 6.9141L3.88672 7.68753C3.70312 7.87113 3.70312 8.16799 3.88672 8.35159L9.66796 14.0859Z" />
+                                        <path
+                                            d="M9.66796 14.0859C9.85156 14.2695 10.1484 14.2695 10.332 14.0859L16.1133 8.35159C16.2969 8.16799 16.2969 7.87113 16.1133 7.68753L15.3398 6.9141C15.1562 6.7305 14.8594 6.7305 14.6758 6.9141L9.99999 11.543L5.32421 6.9141C5.14061 6.7305 4.84375 6.7305 4.66015 6.9141L3.88672 7.68753C3.70312 7.87113 3.70312 8.16799 3.88672 8.35159L9.66796 14.0859Z" />
+                                    </svg>
+                                </div>
+                                <div class="w-[20px] pl-[5px] transform -scale-y-100"
+                                    *ngIf="menu?.childMenuItems?.length > 0 && menu?.showMenu">
+                                    <svg width="20" height="20" viewBox="0 0 20 20"
+                                        class="fill-menuColor group-hover:fill-menuHover" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.66796 14.0859C9.85156 14.2695 10.1484 14.2695 10.332 14.0859L16.1133 8.35159C16.2969 8.16799 16.2969 7.87113 16.1133 7.68753L15.3398 6.9141C15.1562 6.7305 14.8594 6.7305 14.6758 6.9141L9.99999 11.543L5.32421 6.9141C5.14061 6.7305 4.84375 6.7305 4.66015 6.9141L3.88672 7.68753C3.70312 7.87113 3.70312 8.16799 3.88672 8.35159L9.66796 14.0859Z" />
+                                        <path
+                                            d="M9.66796 14.0859C9.85156 14.2695 10.1484 14.2695 10.332 14.0859L16.1133 8.35159C16.2969 8.16799 16.2969 7.87113 16.1133 7.68753L15.3398 6.9141C15.1562 6.7305 14.8594 6.7305 14.6758 6.9141L9.99999 11.543L5.32421 6.9141C5.14061 6.7305 4.84375 6.7305 4.66015 6.9141L3.88672 7.68753C3.70312 7.87113 3.70312 8.16799 3.88672 8.35159L9.66796 14.0859Z" />
+                                    </svg>
+                                </div>
+                            </a>
+
+                            <ul class="nav-dropdown relative sm:absolute"
+                                *ngIf="menu?.childMenuItems?.length > 0 && menu.menuLayout.name !== 'DUO'"
+                                [ngClass]="menu?.showMenu ? 'block' : 'hidden'">
+                                <li class="container sm:w-auto" *ngFor="let childMenu of menu.childMenuItems">
+                                    <a class="px-0 py-[9px] sm:px-[21px] sm:py-[28.5px] w-full flex justify-between cursor-pointer"
+                                        (click)="openLink(childMenu)">
+                                        {{childMenu.menuItemName}}
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div [ngClass]="menu?.showMenu ? 'flex flex-row' : 'hidden'"
+                                class="nav-dropdown relative sm:absolute px-0 max-w-xl"
+                                *ngIf="menu?.childMenuItems?.length > 0 && menu.menuLayout.name === 'DUO'">
+
+                                <ng-container *ngFor="let duoMenu of menu?.duoMenuItems; let last = last;">
+                                    <ul class="nav-dropdown relative block left-0 shadow-none">
+                                        <li class="container sm:w-auto">
+                                            <span
+                                                class="font-bold text-base px-0 py-[9px] sm:px-[21px] sm:py-[28.5px] w-full flex justify-between cursor-pointer">
+                                                {{duoMenu.menuItemName}}
+                                            </span>
+                                        </li>
+                                        <li class="container sm:w-auto"
+                                            *ngFor="let childMenu of duoMenu.childMenuItems">
+                                            <a class="px-0 py-[9px] sm:px-[21px] sm:py-[28.5px] w-full flex justify-between cursor-pointer"
+                                                (click)="openLink(childMenu)">
+                                                {{childMenu.menuItemName}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="my-auto w-[1px] duo-border hidden sm:flex" *ngIf="!last"></div>
+                                </ng-container>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Search panel Start for Mobile -->
+                <div class="nav-search flex sm:hidden pb-[40px]">
+                    <div class="icon-wrap w-full">
+                        <input type="text" class="search-control form-icon rounded-full"
+                            placeholder="Search by Symbol or Company Name">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

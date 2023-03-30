@@ -1,0 +1,147 @@
+@charset "utf-8";
+* {
+  margin: 0px;
+  padding: 0px;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "navicons";
+  src: url("../assets/fonts/navicons.eot?a8s7e7");
+  src: url("../assets/fonts/navicons.eot?a8s7e7#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/navicons.ttf?a8s7e7") format("truetype"),
+    url("../assets/fonts/navicons.woff?a8s7e7") format("woff"),
+    url("../assets/fonts/navicons.svg?a8s7e7#navicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.header_area [class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to pr.event issues with browser extensions that change fonts */
+  font-family: "navicons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+  content: "\e001";
+}
+.icon-help:before {
+  content: "\e002";
+}
+.icon-notification:before {
+  content: "\e003";
+}
+.icon-email:before {
+  content: "\e004";
+}
+.icon-setting:before {
+  content: "\e005";
+}
+.icon-signout:before {
+  content: "\e006";
+}
+.icon-search:before {
+  content: "\e007";
+}
+.icon-close:before {
+  content: "\e008";
+}
+
+@media (max-width: 991px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+  .nav-dropdown > li > a,
+  .megamenu-list > li > a {
+    width: 65%;
+  }
+}
+
+@media (max-width: 360px) {
+}
+
+.topHeaderContainer {
+  background-color: #272727;
+  width: inherit;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+  align-items: center;
+  padding: 0px 20px;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+.centerText {
+  margin-left: 300px;
+}
+.textFont {
+  font-size: 14px;
+}
+.topHeaderLeftContainer {
+  color: rgba(255, 255, 255, 0.65);
+  flex-direction: row nowrap;
+}
+.progressBarcontainer {
+  width: 100px;
+  background: #d8d8d8;
+  height: 6px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.innerBar {
+  padding: 3%;
+  border-radius: 15px;
+  position: absolute;
+  width: 60px;
+  left: 0;
+  right: 0;
+  background: #03a981;
+  border-radius: 3px;
+}
+
+.dividerBar {
+  color: #979797;
+  font-size: 20px;
+  margin-left: 12px;
+}
+
+.dividerAlign {
+  margin-left: 127px;
+}
+
+.iconText {
+  color: #b3b3b3;
+  font-family: "Open Sans";
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.iconAlign {
+  margin: 0px 12px;
+}
+
+.textStyle {
+  /* line-height: 10; */
+}

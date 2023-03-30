@@ -1,0 +1,259 @@
+{
+    "parentMenuItems": [
+        {
+            "menuItemID": 8,
+            "menuItemName": "Account",
+            "menuURL": null,
+            "menuElementClass": "account",
+            "menuElementID": "account",
+            "menuType": {
+                "name": "HEADER",
+                "description": "HEADER"
+            },
+            "menuAction": {
+                "name": "DROPDOWN",
+                "description": "DROPDOWN"
+            },
+            "menuLoadConfig": {
+                "name": null,
+                "description": null
+            },
+            "menuLayout": {
+                "name": "STANDARD",
+                "description": "STANDARD"
+            },
+            "menuEntitlementType": {
+                "name": "STATIC",
+                "description": null
+            },
+            "childMenuItems": [
+                {
+                    "menuItemID": 9,
+                    "menuItemName": "Overview",
+                    "menuURL": "http://localhost:4203/account?page=overview",
+                    "menuElementClass": "overview",
+                    "menuElementID": "overview",
+                    "menuType": {
+                        "name": "LINK",
+                        "description": "LINK"
+                    },
+                    "menuAction": {
+                        "name": "ROUTING",
+                        "description": "ROUTING"
+                    },
+                    "menuLoadConfig": {
+                        "name": "LAZYLOAD",
+                        "description": "LAZYLOAD"
+                    },
+                    "menuLayout": {
+                        "name": null,
+                        "description": null
+                    },
+                    "menuEntitlementType": {
+                        "name": "STATIC",
+                        "description": null
+                    },
+                    "childMenuItems": []
+                },
+                {
+                    "menuItemID": 10,
+                    "menuItemName": "Positions",
+                    "menuURL": "http://localhost:4203/aacount?page=positions",
+                    "menuElementClass": "positions",
+                    "menuElementID": "positions",
+                    "menuType": {
+                        "name": "LINK",
+                        "description": "LINK"
+                    },
+                    "menuAction": {
+                        "name": "ROUTING",
+                        "description": "ROUTING"
+                    },
+                    "menuLoadConfig": {
+                        "name": "LAZYLOAD",
+                        "description": "LAZYLOAD"
+                    },
+                    "menuLayout": {
+                        "name": null,
+                        "description": null
+                    },
+                    "menuEntitlementType": {
+                        "name": "STATIC",
+                        "description": null
+                    },
+                    "childMenuItems": []
+                }
+            ]
+        },
+        {
+            "menuItemID": 11,
+            "menuItemName": "Documents",
+            "menuURL": null,
+            "menuElementClass": "documents",
+            "menuElementID": "documents",
+            "menuType": {
+                "name": "HEADER",
+                "description": "HEADER"
+            },
+            "menuAction": {
+                "name": "DROPDOWN",
+                "description": "DROPDOWN"
+            },
+            "menuLoadConfig": {
+                "name": null,
+                "description": null
+            },
+            "menuLayout": {
+                "name": "STANDARD",
+                "description": "STANDARD"
+            },
+            "menuEntitlementType": {
+                "name": "STATIC",
+                "description": null
+            },
+            "childMenuItems": [
+                {
+                    "menuItemID": 12,
+                    "menuItemName": "View",
+                    "menuURL": "http://localhost:4204/download?page=view",
+                    "menuElementClass": "view",
+                    "menuElementID": "view",
+                    "menuType": {
+                        "name": "LINK",
+                        "description": "LINK"
+                    },
+                    "menuAction": {
+                        "name": "ROUTING",
+                        "description": "ROUTING"
+                    },
+                    "menuLoadConfig": {
+                        "name": "LAZYLOAD",
+                        "description": "LAZYLOAD"
+                    },
+                    "menuLayout": {
+                        "name": null,
+                        "description": null
+                    },
+                    "menuEntitlementType": {
+                        "name": "STATIC",
+                        "description": null
+                    },
+                    "childMenuItems": []
+                },
+                {
+                    "menuItemID": 13,
+                    "menuItemName": "Download",
+                    "menuURL": "http://localhost:4204/download?page=download",
+                    "menuElementClass": "download",
+                    "menuElementID": "download",
+                    "menuType": {
+                        "name": "LINK",
+                        "description": "LINK"
+                    },
+                    "menuAction": {
+                        "name": "ROUTING",
+                        "description": "ROUTING"
+                    },
+                    "menuLoadConfig": {
+                        "name": "LAZYLOAD",
+                        "description": "LAZYLOAD"
+                    },
+                    "menuLayout": {
+                        "name": null,
+                        "description": null
+                    },
+                    "menuEntitlementType": {
+                        "name": "STATIC",
+                        "description": null
+                    },
+                    "childMenuItems": []
+                }
+            ]
+        },
+        {
+            "menuItemID": 14,
+            "menuItemName": "User Management",
+            "menuURL": null,
+            "menuElementClass": "usermanagement",
+            "menuElementID": "usermanagement",
+            "menuType": {
+                "name": "HEADER",
+                "description": "HEADER"
+            },
+            "menuAction": {
+                "name": "DROPDOWN",
+                "description": "DROPDOWN"
+            },
+            "menuLoadConfig": {
+                "name": null,
+                "description": null
+            },
+            "menuLayout": {
+                "name": "STANDARD",
+                "description": "STANDARD"
+            },
+            "menuEntitlementType": {
+                "name": "STATIC",
+                "description": null
+            },
+            "childMenuItems": [
+                {
+                    "menuItemID": 15,
+                    "menuItemName": "Create User",
+                    "menuURL": "http://localhost:4205/usermanagement?page=createuser",
+                    "menuElementClass": "createuser",
+                    "menuElementID": "createuser",
+                    "menuType": {
+                        "name": "LINK",
+                        "description": "LINK"
+                    },
+                    "menuAction": {
+                        "name": "ROUTING",
+                        "description": "ROUTING"
+                    },
+                    "menuLoadConfig": {
+                        "name": "LAZYLOAD",
+                        "description": "LAZYLOAD"
+                    },
+                    "menuLayout": {
+                        "name": null,
+                        "description": null
+                    },
+                    "menuEntitlementType": {
+                        "name": "STATIC",
+                        "description": null
+                    },
+                    "childMenuItems": []
+                },
+                {
+                    "menuItemID": 16,
+                    "menuItemName": "Delete User",
+                    "menuURL": "http://localhost:4205/usermanagement?page=deleteuser",
+                    "menuElementClass": "deleteuser",
+                    "menuElementID": "deleteuser",
+                    "menuType": {
+                        "name": "LINK",
+                        "description": "LINK"
+                    },
+                    "menuAction": {
+                        "name": "ROUTING",
+                        "description": "ROUTING"
+                    },
+                    "menuLoadConfig": {
+                        "name": "LAZYLOAD",
+                        "description": "LAZYLOAD"
+                    },
+                    "menuLayout": {
+                        "name": null,
+                        "description": null
+                    },
+                    "menuEntitlementType": {
+                        "name": "STATIC",
+                        "description": null
+                    },
+                    "childMenuItems": []
+                }
+            ]
+        }
+    ]
+}
