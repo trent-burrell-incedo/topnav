@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
       const token = this.authService.getToken();
       const isLoginPage = state.url === '/login';
       if (token) {
-        return this.authService.validateToken(token).pipe(
+        return this.authService.validateToken().pipe(
           tap(data => {
             if (!data) {
               console.log('Token validation failed, redirecting to login');
@@ -25,7 +25,11 @@ export class AuthGuard implements CanActivate {
               this.router.navigate(['/login']);
             } else {
               console.log('Token validation succesful');
-              return true;
+              if (isLoginPage) {
+                this.router.navigate(['']);
+              } else {
+                return true;
+              }
             }
           })
         );

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { Location } from '@angular/common';
+
 
 declare const require: any;
 
@@ -22,6 +24,7 @@ export class AppComponent implements OnInit {
     private auth: AuthService,
     protected _sanitizer: DomSanitizer,
     private router: Router,
+    private location: Location
   ) {
   }
 
@@ -31,6 +34,7 @@ export class AppComponent implements OnInit {
 
   topNavRouting(link) {
     this.subLink = this._sanitizer.bypassSecurityTrustResourceUrl(link);
+    this.location.replaceState('/');
   }
 
 

@@ -17,12 +17,9 @@ export class AuthService {
       // return of({ token: 'abc' })
       .pipe(
         map((response: HttpResponse<any>) => {
-          const authToken = response.headers.get('x-auth-token');
           if (response?.body) {
             localStorage.setItem('userDetail', JSON.stringify(response?.body));
-          }
-          if (authToken) {
-            localStorage.setItem('currentUser', authToken);
+            localStorage.setItem('token', response?.body.token);
           }
           return response.body;
         })
@@ -30,15 +27,15 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem('token');
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('currentUser');
+    return !!localStorage.getItem('token');
   }
 
   getToken(): string {
-    const token = localStorage.getItem('currentUser');
+    const token = localStorage.getItem('token');
     return token;
   }
 
@@ -52,10 +49,9 @@ export class AuthService {
     }
   }
 
-  validateToken(token: string): Observable<boolean> {
+  validateToken(): Observable<boolean> {
     // return of(true);
-    const headers = new HttpHeaders().set('x-auth-token', token);
-    return this.http.get(this.apiUrl + 'validateauth', { headers }).pipe(
+    return this.http.get(this.apiUrl + 'validateauth').pipe(
       map((res: any) => true),
       catchError(err => {
         return of(false);

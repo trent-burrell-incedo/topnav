@@ -114,7 +114,7 @@ export class TopNavComponent {
       //   // window.open(menu.menuURL, '_blank');
       //   window.open('google.com', '_blank');
       // }
-      this.topNavOutEvent.emit('https://www.youtube.com/embed/3dHNOWTI7H8');
+      // this.topNavOutEvent.emit('https://www.youtube.com/embed/3dHNOWTI7H8');
       // window.open('google.com', '_blank');
     } else {
       this.toggleMenu();
@@ -127,7 +127,8 @@ export class TopNavComponent {
       //   // window.open(menu.menuURL, '_blank');
       //   window.open('google.com', '_blank');
       // }
-      this.topNavOutEvent.emit('https://www.youtube.com/embed/3dHNOWTI7H8');
+      // this.topNavOutEvent.emit('https://www.youtube.com/embed/3dHNOWTI7H8');
+      this.router.navigate(['goals', 'a']);
     }
 
     if (!menu?.activeMenu) {
@@ -147,6 +148,8 @@ export class TopNavComponent {
       list['activeMenu'] = false;
     }
   }
+
+  onLegacyAccountViewOpen() {}
 
 
 }

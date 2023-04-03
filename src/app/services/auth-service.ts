@@ -26,9 +26,7 @@ export class AuthService {
     }
 
     validateUser() {
-        const header = new HttpHeaders()
-            .set('token', environment.token)
 
-        return this.httpClient.get<any>(this.apiUrl + 'validateauth', { headers: header });
+        return this.httpClient.get<any>(this.apiUrl + 'validateauth');
     }
 }
