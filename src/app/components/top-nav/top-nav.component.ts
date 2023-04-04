@@ -37,7 +37,11 @@ export class TopNavComponent {
 
   getTopNavMenu() {
     this.menuService.getPostMenu().subscribe((menus: menus) => {
-      this.menuList = menus.parentMenuItems;
+      var str = menus + "";
+      var data = JSON.parse(str);
+      console.log(data);
+      this.menuList = data.parentMenuItems;
+      console.log(data.application);
       this.sortNavMenu(this.menuList, 'parent');
 
       for (let menu of this.menuList) {
@@ -116,6 +120,9 @@ export class TopNavComponent {
       // }
       // this.topNavOutEvent.emit('https://www.youtube.com/embed/3dHNOWTI7H8');
       // window.open('google.com', '_blank');
+      if (childMenu.menuItemName === 'Balances') {
+        this.router.navigate(['legacy-account-view'])
+      }
     } else {
       this.toggleMenu();
       this.initializeMenu();
@@ -149,7 +156,7 @@ export class TopNavComponent {
     }
   }
 
-  onLegacyAccountViewOpen() {}
+  onLegacyAccountViewOpen() { }
 
 
 }

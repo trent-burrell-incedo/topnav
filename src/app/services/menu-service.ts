@@ -25,11 +25,16 @@ export class MenuService {
     // }
 
     getPostMenu(): Observable<menus> {
-        const userDetail = JSON.parse(localStorage.getItem('userDetail'))
+        const groupName = localStorage.getItem('groupName');
+        const token = localStorage.getItem('token');
         const queryParms = new HttpParams()
             .set('appname', 'av')
-            .append('groupname', userDetail.groupName);
+            .append('groupname', groupName);
 
-        return this.httpClient.get<menus>(this.apiUrl + 'postauth', { params: queryParms });
+        const httpOptions = {
+            headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json', 'accept': 'application/json' },
+            params: { 'appname': 'av', 'groupName': groupName}
+        };
+        return this.httpClient.get<menus>(this.apiUrl + 'postauth', httpOptions);
     }
 }

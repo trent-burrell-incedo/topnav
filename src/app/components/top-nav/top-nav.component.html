@@ -1,6 +1,6 @@
 <div class="header_area bg-white shadow-lg">
     <div class="main_header_area animated">
-        <div class="container flex justify-between items-center px-3 sm:hidden">
+        <div class="container flex justify-between items-center px-3 lg:hidden">
             <div class="w-[2rem] flex justify-center items-center" *ngIf="!isOpenMenu" (click)="toggleMenu()">
                 <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1194_1511)">
@@ -47,15 +47,15 @@
                 </svg>
             </div>
         </div>
-        <div class="container-fluid sm:block" [ngClass]="isOpenMenu ? '' : 'hidden'">
+        <div class="container-fluid lg:block" [ngClass]="isOpenMenu ? '' : 'hidden'">
             <nav id="navigation1" class="navigation">
                 <!-- Logo Area Start -->
-                <div class="nav-header hidden sm:block">
+                <div class="nav-header hidden lg:block">
                     <a class="nav-brand logo" href="#"><img src="../assets/images/Logo.svg" alt="Logo"></a>
                     <div class="nav-toggle"></div>
                 </div>
                 <!-- Search panel Start -->
-                <div class="nav-search hidden sm:block">
+                <div class="nav-search hidden lg:block">
                     <div class="icon-wrap">
                         <input type="text" class="search-control form-icon"
                             placeholder="Search by Symbol or Company Name">
@@ -63,9 +63,9 @@
                     </div>
                 </div>
                 <div class="nav-menus-wrapper">
-                    <ul class="nav-menu pl-0 sm:pl-[20px]">
-                        <li class="container sm:w-auto" *ngFor="let menu of menuList">
-                            <a class="px-0 py-[9px] sm:px-[21px] sm:py-[28.5px] w-full flex justify-between cursor-pointer group"
+                    <ul class="nav-menu pl-0 lg:pl-[20px]">
+                        <li class="container lg:w-auto" *ngFor="let menu of menuList">
+                            <a class="px-0 py-[9px] lg:px-[21px] lg:py-[28.5px] w-full flex justify-between cursor-pointer group"
                                 [ngClass]="menu?.activeMenu?'active-menu':''" (click)="toggleSubmenu(menu)"
                                 (mouseenter)="showMenu(menu)">
                                 {{menu.menuItemName}}
@@ -82,7 +82,8 @@
                                 </div>
                                 <div class="w-[20px] pl-[5px] transform -scale-y-100"
                                     *ngIf="menu?.childMenuItems?.length > 0 && menu?.showMenu">
-                                    <svg width="20" height="20" [ngClass]="menu?.showMenu || menu?.activeMenu?'fill-menuHover':''"
+                                    <svg width="20" height="20"
+                                        [ngClass]="menu?.showMenu || menu?.activeMenu?'fill-menuHover':''"
                                         viewBox="0 0 20 20" class="fill-menuColor" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -93,11 +94,11 @@
                                 </div>
                             </a>
 
-                            <ul class="nav-dropdown relative sm:absolute"
+                            <ul class="nav-dropdown relative lg:absolute"
                                 *ngIf="menu?.childMenuItems?.length > 0 && menu.menuLayout.name !== 'DUO'"
                                 [ngClass]="menu?.showMenu ? 'block' : 'hidden'">
-                                <li class="container sm:w-auto" *ngFor="let childMenu of menu.childMenuItems">
-                                    <a class="px-0 py-[9px] sm:px-[21px] sm:py-[28.5px] w-full flex justify-between cursor-pointer"
+                                <li class="container lg:w-auto" *ngFor="let childMenu of menu.childMenuItems">
+                                    <a class="px-0 py-[9px] lg:px-[21px] lg:py-[28.5px] w-full flex justify-between cursor-pointer"
                                         (click)="openLink(childMenu, menu)">
                                         {{childMenu.menuItemName}}
                                     </a>
@@ -105,41 +106,41 @@
                             </ul>
 
                             <div [ngClass]="menu?.showMenu ? 'flex flex-row' : 'hidden'"
-                                class="nav-dropdown relative sm:absolute px-0 max-w-xl"
+                                class="nav-dropdown relative lg:absolute px-0 max-w-xl"
                                 *ngIf="menu?.childMenuItems?.length > 0 && menu.menuLayout.name === 'DUO'">
 
                                 <ng-container *ngFor="let duoMenu of menu?.duoMenuItems; let last = last;">
                                     <ul class="nav-dropdown relative block left-0 shadow-none">
-                                        <li class="container sm:w-auto">
+                                        <li class="container lg:w-auto">
                                             <span
-                                                class="font-bold text-base px-0 py-[9px] sm:px-[21px] sm:py-[28.5px] w-full flex justify-between cursor-pointer">
+                                                class="font-bold text-base px-0 py-[9px] lg:px-[21px] lg:py-[28.5px] w-full flex justify-between cursor-pointer">
                                                 {{duoMenu.menuItemName}}
                                             </span>
                                         </li>
-                                        <li class="container sm:w-auto"
+                                        <li class="container lg:w-auto"
                                             *ngFor="let childMenu of duoMenu.childMenuItems">
-                                            <a class="px-0 py-[9px] sm:px-[21px] sm:py-[28.5px] w-full flex justify-between cursor-pointer"
+                                            <a class="px-0 py-[9px] lg:px-[21px] lg:py-[28.5px] w-full flex justify-between cursor-pointer"
                                                 (click)="openLink(childMenu)">
                                                 {{childMenu.menuItemName}}
                                             </a>
                                         </li>
                                     </ul>
-                                    <div class="my-auto w-[1px] duo-border hidden sm:flex" *ngIf="!last"></div>
+                                    <div class="my-auto w-[1px] duo-border hidden lg:flex" *ngIf="!last"></div>
                                 </ng-container>
 
                             </div>
                         </li>
-                        <li class="container sm:w-auto">
-                            <a class="px-0 py-[9px] sm:px-[21px] sm:py-[28.5px] w-full flex justify-between cursor-pointer group"
+                        <!-- <li class="container lg:w-auto">
+                            <a class="px-0 py-[9px] lg:px-[21px] lg:py-[28.5px] w-full flex justify-between cursor-pointer group"
                                 routerLink="/legacy-account-view">
                                 Legacy Account View
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
 
                 <!-- Search panel Start for Mobile -->
-                <div class="nav-search flex sm:hidden pb-[40px]">
+                <div class="nav-search flex lg:hidden pb-[40px]">
                     <div class="icon-wrap w-full">
                         <input type="text" class="search-control form-icon rounded-full"
                             placeholder="Search by Symbol or Company Name">

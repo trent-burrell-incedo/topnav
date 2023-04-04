@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   // apiUrl: 'http://localhost:8080/LPLJsonAPI/',
-  apiUrl: 'http://mfe-top-nav-clb-175761738.us-east-1.elb.amazonaws.com/LPLMenuAPI/',
+   apiUrl: 'https://localhost:63634/devint/api/mfetopnav_api/lplmenuapi/',
+  //apiUrl: 'https://k8s-investor-ingressg-c2609574e7-0ae77245acba163b.elb.us-east-1.amazonaws.com/api/investor-internal/mfetopnav-api/lplmenuapi/',
   token: '',
 };
 

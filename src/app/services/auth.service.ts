@@ -19,7 +19,8 @@ export class AuthService {
         map((response: HttpResponse<any>) => {
           if (response?.body) {
             localStorage.setItem('userDetail', JSON.stringify(response?.body));
-            localStorage.setItem('token', response?.body.token);
+            localStorage.setItem('token', JSON.parse(response?.body).token);
+            localStorage.setItem('groupName', JSON.parse(response?.body).groupName);
           }
           return response.body;
         })
@@ -36,6 +37,11 @@ export class AuthService {
 
   getToken(): string {
     const token = localStorage.getItem('token');
+    return token;
+  }
+
+  getGroupName(): string {
+    const token = localStorage.getItem('groupName');
     return token;
   }
 
