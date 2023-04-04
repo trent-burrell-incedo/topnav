@@ -17,10 +17,10 @@
 </ul> -->
 
 <div class="topHeaderContainer">
-  <div class="textFont sm:flex hidden"><i>Investing in your future</i></div>
-  <div class="flex mx-auto sm:hidden"> As of {{currentDate | date: 'MMM d, y hh:mm a' }} EDT</div>
-  <div class="centerText hidden sm:block"> As of {{currentDate | date: 'MMM d, y hh:mm a' }} EDT</div>
-  <div class="topHeaderLeftContainer textFont sm:flex hidden">
+  <div class="textFont lg:flex hidden"><i>Investing in your future</i></div>
+  <div class="flex mx-auto lg:hidden"> As of {{currentDate | date: 'MMM d, y hh:mm a' }} {{timeZone}}</div>
+  <div class="centerText hidden lg:block"> As of {{currentDate | date: 'MMM d, y hh:mm a' }} {{timeZone}}</div>
+  <div class="topHeaderLeftContainer textFont lg:flex hidden">
     <span>Paperless Status</span>
     <div class="progressBarcontainer ml-3 my-auto">
       <div class="innerBar"></div>

@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
   currentDate = new Date();
   profile: Record<string, string> = {};
   subLink: SafeUrl = '';
+  timeZone: string = '';
   constructor(
     private auth: AuthService,
     protected _sanitizer: DomSanitizer,
@@ -30,6 +31,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.profile = this.auth.getUserDetails();
+    this.timeZone = new Date().toLocaleTimeString('en-us', { timeZoneName: 'short' }).split(' ')[2];
+    console.log(this.timeZone)
   }
 
   topNavRouting(link) {
