@@ -100,6 +100,8 @@ export class TopNavComponent {
       if (!menu.showMenu)
         this.initializeMenu();
       menu.showMenu = true;
+    } else {
+      this.initializeMenu();
     }
   }
 
