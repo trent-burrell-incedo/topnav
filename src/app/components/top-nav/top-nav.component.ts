@@ -37,11 +37,12 @@ export class TopNavComponent {
 
   getTopNavMenu() {
     this.menuService.getPostMenu().subscribe((menus: menus) => {
-      var str = menus + "";
-      var data = JSON.parse(str);
-      console.log(data);
-      this.menuList = data.parentMenuItems;
-      console.log(data.application);
+      // var str = menus + "";
+      // var data = JSON.parse(str);
+      // console.log(data);
+      // this.menuList = data.parentMenuItems;
+      this.menuList = menus.parentMenuItems;
+      // console.log(data.application);
       this.sortNavMenu(this.menuList, 'parent');
 
       for (let menu of this.menuList) {
@@ -89,6 +90,7 @@ export class TopNavComponent {
 
   toggleSubmenu(menu) {
     if (menu?.childMenuItems?.length > 0) {
+      menu.showMenu = !menu.showMenu;
     } else {
       this.openLink('', menu);
     }
