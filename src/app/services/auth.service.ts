@@ -56,8 +56,12 @@ export class AuthService {
   }
 
   validateToken(): Observable<boolean> {
-    // return of(true);
-    return this.http.get(this.apiUrl + 'validateauth').pipe(
+    const token = localStorage.getItem('token');
+    console.log(token);
+    const httpOptions = {
+        headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json', 'accept': 'application/json' }
+    };
+    return this.http.get(this.apiUrl + 'validateauth', httpOptions).pipe(
       map((res: any) => true),
       catchError(err => {
         return of(false);

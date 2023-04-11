@@ -3,6 +3,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { Location } from '@angular/common';
+import { interval, map, startWith } from 'rxjs';
 
 
 declare const require: any;
@@ -17,7 +18,10 @@ export class AppComponent implements OnInit {
   ngVersion = require('../../package.json').dependencies['@angular/core'];
 
   title = 'shell';
-  currentDate = new Date();
+  currentDate$ = interval(30000).pipe(
+    startWith(''),
+    map(_ => new Date())
+  );
   profile: Record<string, string> = {};
   subLink: SafeUrl = '';
   timeZone: string = '';
