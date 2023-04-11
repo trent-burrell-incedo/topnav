@@ -28,10 +28,24 @@ export class TopNavComponent {
     this.wasInside = false;
   }
 
+  isMobileView: boolean;
+  switchDetected: boolean = false;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    const newIsMobileView = event.target.innerWidth <= 1024;
+    if (newIsMobileView !== this.isMobileView) {
+      this.isMobileView = newIsMobileView;
+      this.isOpenMenu = false;
+      this.initializeMenu();
+    }
+  }
+
   constructor(
     private router: Router,
     private menuService: MenuService,
   ) {
+    this.isMobileView = window.innerWidth <= 1024;
     this.getTopNavMenu();
   }
 
@@ -58,6 +72,7 @@ export class TopNavComponent {
       this.initializeActiveMenu();
     });
   }
+
 
   sortNavMenu(menus, type) {
     if (type === 'parent') {
@@ -89,9 +104,12 @@ export class TopNavComponent {
 
   toggleSubmenu(menu) {
     if (menu?.childMenuItems?.length > 0) {
-      if(window.outerWidth < 1025) {
+      if (window.innerWidth < 1025) {
         if (!menu.showMenu)
           this.initializeMenu();
+        if (!menu?.activeMenu) {
+          this.initializeActiveMenu();
+        }
       }
       menu.showMenu = !menu.showMenu;
     } else {
@@ -100,7 +118,7 @@ export class TopNavComponent {
   }
 
   showMenu(menu) {
-    if (window.outerWidth > 1024) {
+    if (window.innerWidth > 1024) {
       if (menu?.childMenuItems?.length > 0) {
         if (!menu.showMenu)
           this.initializeMenu();
@@ -117,9 +135,9 @@ export class TopNavComponent {
   }
 
   openLink(childMenu, menu) {
+    this.isOpenMenu = false;
+    this.initializeMenu();
     if (childMenu) {
-      this.toggleMenu();
-      this.initializeMenu();
       // if (menu.menuAction.name === 'ROUTING') {
       //   // this.router.navigate([menu.menuURL]);
       //   this.topNavOutEvent.emit(menu.menuURL);
@@ -134,8 +152,6 @@ export class TopNavComponent {
         this.router.navigate(['legacy-account-view'])
       }
     } else {
-      this.toggleMenu();
-      this.initializeMenu();
       // if (menu.menuAction.name === 'ROUTING') {
       //   // this.router.navigate([menu.menuURL]);
       //   this.topNavOutEvent.emit(menu.menuURL);
