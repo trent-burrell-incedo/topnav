@@ -1,6 +1,6 @@
 <div class="header_area bg-white shadow-lg">
-    <div class="main_header_area animated" [ngClass]="isOpenMenu?'h-[calc(100vh-40px)] bg-mobileMenuBack relative':''">
-        <div class="container flex justify-between items-center px-3 lg:hidden bg-white">
+    <div class="main_header_area animated">
+        <div class="container flex justify-between items-center px-3 lg:hidden">
             <div class="w-[2rem] flex justify-center items-center" *ngIf="!isOpenMenu" (click)="toggleMenu()">
                 <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1194_1511)">
@@ -47,17 +47,15 @@
                 </svg>
             </div>
         </div>
-        <div class="container-fluid lg:block"
-            [ngClass]="isOpenMenu ? 'bg-white max-h-[calc(100%-241px)] overflow-y-auto' : 'hidden'">
+        <div class="container-fluid lg:block" [ngClass]="isOpenMenu ? '' : 'hidden'">
             <nav id="navigation1" class="navigation">
-                <!-- Logo Area Start Desktop -->
+                <!-- Logo Area Start -->
                 <div class="nav-header hidden lg:block">
-                    <a class="nav-brand logo" href="#"><img src="../assets/images/Logo.svg"
-                            alt="Appleseed Investment"></a>
+                    <a class="nav-brand logo" href="#"><img src="../assets/images/Logo.svg" alt="Appleseed Investment"></a>
                     <div class="nav-toggle"></div>
                 </div>
-                <!-- Search panel Start for Desktop -->
-                <div class="nav-search hidden lg:block max-w-[250px]">
+                <!-- Search panel Start -->
+                <div class="nav-search hidden lg:block">
                     <div class="icon-wrap">
                         <input type="text" class="search-control form-icon text-menuColor"
                             placeholder="Search by Symbol or Company Name">
@@ -67,10 +65,10 @@
                 <div class="nav-menus-wrapper lg:w-auto flex">
                     <ul class="nav-menu pl-0 lg:pl-[20px] w-[100%] lg:w-auto">
                         <li class="container lg:w-auto" *ngFor="let menu of menuList">
-                            <a class="px-0 py-[9px] lg:px-[9px] lg:py-[28.5px] w-full flex justify-between cursor-pointer group"
+                            <a class="px-0 py-[9px] lg:px-[21px] lg:py-[28.5px] w-full flex justify-between cursor-pointer group"
                                 [ngClass]=" menu?.activeMenu?'active-menu':''" (click)="toggleSubmenu(menu)"
                                 (mouseenter)="showMenu(menu)">
-                                <div tabindex="1" [ngClass]="isOpenMenu?'justify-between w-[100%]':''"
+                                <div tabindex="1"
                                     class="flex focus-visible:border-b-2 focus-visible:border-menuColor focus:outline-none">
                                     <span>{{menu.menuItemName}}</span>
                                     <div class="w-[20px] pl-[5px]"
@@ -146,37 +144,14 @@
                 </div>
 
                 <!-- Search panel Start for Mobile -->
-                <div class="w-[100%] flex lg:hidden justify-center">
-                    <div class="nav-search pb-[40px]">
-                        <div class="icon-wrap w-full">
-                            <input type="text" class="search-control form-icon rounded-full text-menuColor"
-                                placeholder="Search by Symbol or Company Name">
-                            <i class="fa fa-search"></i>
-                        </div>
+                <div class="nav-search flex lg:hidden pb-[40px]">
+                    <div class="icon-wrap w-full">
+                        <input type="text" class="search-control form-icon rounded-full text-menuColor"
+                            placeholder="Search by Symbol or Company Name">
+                        <i class="fa fa-search"></i>
                     </div>
                 </div>
             </nav>
-        </div>
-
-        <div *ngIf="isOpenMenu" class="absolute bottom-[10px] left-0 w-[100%]">
-            <div class="px-[24px]">
-                <div class="cursor-pointer py-2">
-                    <i class="fa fa-leaf mr-2"></i>
-                    Go Paperless
-                </div>
-                <div class="cursor-pointer py-2">
-                    <i class="fa fa-circle-user mr-2"></i>
-                    My Rep
-                </div>
-                <div class="cursor-pointer py-2">
-                    <i class="fa fa-gear mr-2"></i>
-                    Settings
-                </div>
-                <div class="cursor-pointer py-2">
-                    <i class="fa fa-right-from-bracket mr-2"></i>
-                    Log Out
-                </div>
-            </div>
         </div>
     </div>
 </div>

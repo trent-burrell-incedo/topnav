@@ -89,10 +89,6 @@ export class TopNavComponent {
 
   toggleSubmenu(menu) {
     if (menu?.childMenuItems?.length > 0) {
-      if(window.outerWidth < 1025) {
-        if (!menu.showMenu)
-          this.initializeMenu();
-      }
       menu.showMenu = !menu.showMenu;
     } else {
       this.openLink('', menu);
@@ -100,15 +96,12 @@ export class TopNavComponent {
   }
 
   showMenu(menu) {
-    if (window.outerWidth > 1024) {
-      if (menu?.childMenuItems?.length > 0) {
-        if (!menu.showMenu)
-          this.initializeMenu();
-        menu.showMenu = true;
-      } else {
+    if (menu?.childMenuItems?.length > 0) {
+      if (!menu.showMenu)
         this.initializeMenu();
-      }
+      menu.showMenu = true;
     } else {
+      this.initializeMenu();
     }
   }
 
