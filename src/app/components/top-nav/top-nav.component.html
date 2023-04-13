@@ -57,7 +57,7 @@
                     <div class="nav-toggle"></div>
                 </div>
                 <!-- Search panel Start for Desktop -->
-                <div class="nav-search hidden lg:block max-w-[250px]">
+                <div class="nav-search hidden lg:block max-w-[350px]">
                     <div class="icon-wrap">
                         <input type="text" class="search-control form-icon text-menuColor"
                             placeholder="Search by Symbol or Company Name">
@@ -166,13 +166,13 @@
                 </div>
                 <div class="cursor-pointer py-2">
                     <i class="fa fa-circle-user mr-2"></i>
-                    My Rep
+                    {{ profile?.firstName }}
                 </div>
                 <div class="cursor-pointer py-2">
                     <i class="fa fa-gear mr-2"></i>
                     Settings
                 </div>
-                <div class="cursor-pointer py-2">
+                <div class="cursor-pointer py-2" (click)="logOut()">
                     <i class="fa fa-right-from-bracket mr-2"></i>
                     Log Out
                 </div>

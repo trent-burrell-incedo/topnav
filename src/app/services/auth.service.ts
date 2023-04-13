@@ -19,8 +19,8 @@ export class AuthService {
         map((response: HttpResponse<any>) => {
           if (response?.body) {
             localStorage.setItem('userDetail', JSON.stringify(response?.body));
-            localStorage.setItem('token', JSON.parse(response?.body).token);
-            localStorage.setItem('groupName', JSON.parse(response?.body).groupName);
+            localStorage.setItem('token', response?.body.token);
+            localStorage.setItem('groupName', response?.body.groupName);
           }
           return response.body;
         })

@@ -1,6 +1,7 @@
-import { Component, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, HostListener, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { menu, menus } from 'src/app/models/menu/menu';
+import { AuthService } from 'src/app/services/auth.service';
 import { MenuService } from 'src/app/services/menu-service';
 
 @Component({
@@ -8,10 +9,11 @@ import { MenuService } from 'src/app/services/menu-service';
   templateUrl: './top-nav.component.html',
   styleUrls: ['./top-nav.component.css']
 })
-export class TopNavComponent {
+export class TopNavComponent implements OnInit {
   isOpenMenu: boolean = false;
   menuList: menu[] = [];
   private wasInside = false;
+  profile = {};
   @Output('topNavOutEvent') topNavOutEvent: EventEmitter<string> = new EventEmitter<string>();
 
   @HostListener('click')
@@ -44,15 +46,19 @@ export class TopNavComponent {
   constructor(
     private router: Router,
     private menuService: MenuService,
+    private auth: AuthService
   ) {
     this.isMobileView = window.innerWidth <= 1024;
     this.getTopNavMenu();
   }
 
+  ngOnInit(): void {
+    this.profile = this.auth.getUserDetails();
+  }
+
+
   getTopNavMenu() {
-    this.menuService.getPostMenu().subscribe((menus: menus) => {
-      var str = menus + "";
-      var data = JSON.parse(str);
+    this.menuService.getPostMenu().subscribe((data: any) => {
       console.log(data);
       this.menuList = data.parentMenuItems;
       console.log(data.application);
@@ -183,6 +189,11 @@ export class TopNavComponent {
   }
 
   onLegacyAccountViewOpen() { }
+
+  logOut() {
+    localStorage.clear();
+    this.router.navigate(['login'])
+  }
 
 
 }
