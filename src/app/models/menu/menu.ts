@@ -18,7 +18,9 @@ export interface menu {
     prtViewOrder: number,
     chldViewOrder: number,
     childMenuItems: menu[],
-    duoMenuItems: menu[]
+    duoMenuItems?: menu[],
+    showMenu?: boolean,
+    activeMenu?: boolean,
 }
 
 export interface menus {
